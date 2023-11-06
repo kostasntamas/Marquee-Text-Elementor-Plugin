@@ -187,7 +187,7 @@ class Elementor_Marquee_Widget extends \Elementor\Widget_Base
       $html_tag       = $settings["html_tag"];
       $animation_type = $settings["animation_type"];
 
-      echo "<style> :root {--animation-type: " . $animation_type . ";} </style>";
+      // echo "<style> .marquee {--_animation-type: " . $animation_type . ";} </style>";
 
       if ($html_tag === "a") {
          $link = $settings["link"]["url"];
@@ -195,7 +195,7 @@ class Elementor_Marquee_Widget extends \Elementor\Widget_Base
          $link = "";
       }
 
-      echo '<div class="marquee">';
+      echo '<div class="marquee" style="--_anim-direct: ' . $animation_type . ';">';
       echo "<" . $html_tag . ' class="marquee_text">';
       if (!empty($link)) {
          echo '<a href="' . $link . '">' . $title . "</a>";
